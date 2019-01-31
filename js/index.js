@@ -79,3 +79,12 @@ let paragraph = document.querySelectorAll('p');
 let content = Object.keys(siteContent['main-content']).filter((key) => key.includes('content'));
 
 paragraph.forEach((index, i) => paragraph[i].textContent = siteContent['main-content'][`${content[i]}`]);
+
+//Contact Section
+header[5].textContent = siteContent['contact']['contact-h4'];
+
+paragraph[5].innerHTML = siteContent['contact']['address'].split('Street ').join(`Street <br>`);
+
+paragraph[6].innerHTML = siteContent['contact']['phone'];
+
+paragraph[7].innerHTML = siteContent['contact']['email'];
