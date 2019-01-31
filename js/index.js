@@ -66,3 +66,16 @@ ctaH.innerHTML = siteContent['cta']['h1'].split(' ').join(`<br>`);
 
 let ctaButton = document.querySelector('button');
 ctaButton.textContent = siteContent['cta']['button'];
+
+//Main Content
+let header = document.querySelectorAll('h4');
+
+let headerMain = Object.keys(siteContent['main-content']).filter((key) => key.includes('h4'));
+
+header.forEach((index, i) => header[i].textContent = siteContent['main-content'][`${headerMain[i]}`]);
+
+let paragraph = document.querySelectorAll('p');
+
+let content = Object.keys(siteContent['main-content']).filter((key) => key.includes('content'));
+
+paragraph.forEach((index, i) => paragraph[i].textContent = siteContent['main-content'][`${content[i]}`]);
