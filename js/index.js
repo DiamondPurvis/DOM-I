@@ -1,3 +1,7 @@
+
+
+
+
 const siteContent = {
   "nav": {
     "nav-item-1": "Services",
@@ -39,4 +43,76 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+let headerImg = document.getElementById("cta-img");
+headerImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
+let middleImg = document.getElementById("middle-img");
+middleImg.setAttribute('src', siteContent ["main-content"]["middle-img-src"]);
+
+//Navigation
+//let nav = document.querySelectorAll('a');
+
+let nav = document.querySelectorAll('a');
+nav[0].textContent = siteContent['nav']['nav-item-1'];
+nav[1].textContent = siteContent['nav']['nav-item-2'];
+nav[2].textContent = siteContent['nav']['nav-item-3'];
+nav[3].textContent = siteContent['nav']['nav-item-4'];
+nav[4].textContent = siteContent['nav']['nav-item-5'];
+nav[5].textContent = siteContent['nav']['nav-item-6'];
+let navA = document.querySelectorAll("a");
+navA.forEach((index, i) => navA[i].textContent = siteContent["nav"][`${
+  Object.keys(siteContent["nav"])[i]
+}`]);
+
+//New Content
+navA.forEach(navA => navA.style.color = 'green');
+
+let navAdd = document.querySelector('nav');
+
+let home = document.createElement("a")
+home.textContent = "Home"
+home.href = "#"
+home.style.color = "pink"
+
+let portfolio = document.createElement("a")
+portfolio.textContent = "Portfolio"
+portfolio.href = "#"
+portfolio.style.color = "blue"
+
+navAdd.prepend(home)
+navAdd.appendChild(portfolio)
+
+
+//DOM IS AWESOMES
+let ctaH = document.querySelector('h1');
+ctaH.innerHTML = siteContent['cta']['h1'].split(' ').join(`<br>`);
+
+let ctaButton = document.querySelector('button');
+ctaButton.textContent = siteContent['cta']['button'];
+
+//Main Content
+let header = document.querySelectorAll('h4');
+
+let headerMain = Object.keys(siteContent['main-content']).filter((key) => key.includes('h4'));
+
+header.forEach((index, i) => header[i].textContent = siteContent['main-content'][`${headerMain[i]}`]);
+
+let paragraph = document.querySelectorAll('p');
+
+let content = Object.keys(siteContent['main-content']).filter((key) => key.includes('content'));
+
+paragraph.forEach((index, i) => paragraph[i].textContent = siteContent['main-content'][`${content[i]}`]);
+
+//Contact Section
+header[5].textContent = siteContent['contact']['contact-h4'];
+
+paragraph[5].innerHTML = siteContent['contact']['address'].split('Street ').join(`Street <br>`);
+
+paragraph[6].innerHTML = siteContent['contact']['phone'];
+
+paragraph[7].innerHTML = siteContent['contact']['email'];
+
+/// footer
+paragraph[8].innerHTML = siteContent['footer']['copyright']
