@@ -59,3 +59,10 @@ nav[2].textContent = siteContent['nav']['nav-item-3'];
 nav[3].textContent = siteContent['nav']['nav-item-4'];
 nav[4].textContent = siteContent['nav']['nav-item-5'];
 nav[5].textContent = siteContent['nav']['nav-item-6'];
+
+//DOM IS AWESOMES
+let ctaH = document.querySelector('h1');
+ctaH.innerHTML = siteContent['cta']['h1'].split(' ').join(`<br>`);
+
+let ctaButton = document.querySelector('button');
+ctaButton.textContent = siteContent['cta']['button'];
